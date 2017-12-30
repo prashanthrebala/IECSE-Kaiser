@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Kaiser</title>
+	<link rel="stylesheet" type="text/css" href="../css/pr.css">
+
+	<script type="text/javascript" src="../js/jquery-3.2.1.min.js"></script>
+	<script type="text/javascript" src="../js/jquery.countdown.min.js"></script>
+	<script type="text/javascript" src="../js/sha256.js"></script>
+	<script type="text/javascript" src="../js/questions.js"></script>
+	<script type="text/javascript" src="../js/globalVars.js"></script>
+
+</head>
+<body onload="setVariables();">
+
+	<div id="gg">
+
+		<div id="successModal">
+			<div class="modalDiv" style="background-color: #27ae60;">
+				<div class="modalDivInner">Success</div>
+				<div align="center"><img src="img/tick.png" height="50px" width="50px"></div>
+			</div>
+		</div>
+
+		<div id="wrongAnswerModal">
+			<div class="modalDiv" style="background-color: #e74c3c;">
+				<div class="modalDivInner">Wrong Answer</div>
+				<div align="center"><img src="img/wrong.png" height="55px" width="55px"></div>
+			</div>
+		</div>
+
+		<div class="titleBar">
+			<div class="sideBarHeader">
+				Problems
+			</div>
+			<div id="appHeaderID" class="appHeader">
+				Kaiser
+			</div>
+			<div id="scoreDisplayID" class="scoreDisplay">
+				<div class="scoreDisplayText"><div id="sDinner1">score: </div></div>
+				<div class="scoreDisplayNumeric"><div id="sDinner2">0</div></div>
+			</div>
+			<div id="statCheckID" class="statCheck" onclick="openNav();">
+					&#9776;
+			</div>
+		</div>
+
+		<div id="mySidenav" class="sidenav">
+			<div class="closebtn" onclick="closeNav()">&times;</div>
+			<hr>
+			<div class="sideNavScoreText">score: </div>
+			<div id="myScore"></div>
+			<hr>
+			<div class="timeRemaining">
+				<div class="timeRemainingText">time remaining:</div>
+				<div id="countDown"></div>
+			</div>
+			<hr>
+		</div>
+
+		<div class="content">
+			<div id="sideBarID" class="sideBar">  </div>
+			<div class="questionDisplay">
+				<div id="questionDescriptionID" class="questionDescription">
+					<center>EVENT TEXT / DESCRIPTION GOES HERE</center>
+				</div>
+				<div class="submissionZone">
+					<div style="position: absolute; left: 0; width: 75%; height: 90%;">
+						<textarea id="answerText" placeholder="Enter your output here..."></textarea>
+					</div>
+					<div style="position: absolute; left: 70%; width: 10%; height: 90%;">
+						<button id="submitButton" onclick="submit();">Submit</button>
+					</div>
+				</div>
+			</div>
+
+		</div>
+	</div>
+
+</body>
+</html>
