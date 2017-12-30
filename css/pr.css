@@ -351,12 +351,20 @@ button:hover {
 
 }
 
-.questionNumber {
+.questionNumberA {
 
 	height: 100%;
 	width: 65%;
 	padding-top: 11px;
 	margin-left: 25px;
+
+}
+
+.questionNumberB {
+
+	height: 100%;
+	width: 100%;
+	padding-top: 11px;
 
 }
 

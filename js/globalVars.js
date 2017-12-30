@@ -1,7 +1,9 @@
 
 var currentQuestion = 0;
 var duration = 90;
-var numberOfQuestions = 20;
+var numberOfQuestionsA = 15;
+var numberOfQuestionsB = 5;
+var totalQuestions = 20;
 var defaultTries = [100, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5,
 						 7, 7, 7, 7, 7, 7, 7, 9, 9, 9];
 
@@ -35,30 +37,44 @@ function dropSpaceChars(string)
 }
 
 /*
-Question Link Format:
+QuestionA Link Format:
 <div id="qn13" class="questionLink" onclick="displayQuestion(13)">
-	<div id="qn13T" class="questionNumber">
+	<div id="qn13T" class="questionNumberA">
 		Question 13
 	</div>
 	<div id="qn13S" class="questionStatus">
 		7
 	</div>
 </div>
+
+QuestionB Link Format:
+<div id="qn18" class="questionLink" onclick="displayQuestion(18)">
+	<div id="qn18T" class="questionNumberB">
+		Question 18
+	</div>
+</div>
+
 */
 
 function setVariables()
 {
 	var questionLinksHTML = "<hr style='width: 100%;'>";
-	for(let i=1;i<=numberOfQuestions;i++)
+	for(let i=1;i<=numberOfQuestionsA;i++)
 	{
 		questionLinksHTML += "<div id='qn" + i + "' class='questionLink' onclick='displayQuestion("+i+")'>";
-		questionLinksHTML += "<div id='qn" + i + "T' class='questionNumber'>Question " + i + "</div>";
+		questionLinksHTML += "<div id='qn" + i + "T' class='questionNumberA'>Question " + i + "</div>";
 		questionLinksHTML += "<div id='qn" + i + "S' class='questionStatus'>" + (questions[i]['solved'] ? '&#10003;' : questions[i]['attempts']) + "</div>";
-		questionLinksHTML += "</div>" + (i == numberOfQuestions ? "<hr style='width: 100%;'>" : "<hr>");
+		questionLinksHTML += "</div>" + (i == numberOfQuestionsA ? "<hr style='width: 100%;'>" : "<hr>");
+	}
+	for(let i=numberOfQuestionsA+1;i<=totalQuestions;i++)
+	{
+		questionLinksHTML += "<div id='qn" + i + "' class='questionLink' onclick='displayQuestion("+i+")'>";
+		questionLinksHTML += "<div id='qn" + i + "T' class='questionNumberB'>Question " + i + "</div>";
+		questionLinksHTML += "</div>" + (i == totalQuestions ? "<hr style='width: 100%;'>" : "<hr>");
 	}
 	$('#sideBarID').html(questionLinksHTML);
 
-	for(let i=1;i<=numberOfQuestions;i++)
+	for(let i=1;i<=numberOfQuestionsA;i++)
 	{
 		if(questions[i]['solved'])
 			$("#qn" + i + "S").css({'border' : '2px solid #37B76C', 'color' : '#37B76C'});
