@@ -59,6 +59,8 @@ QuestionB Link Format:
 function setVariables()
 {
 	var questionLinksHTML = "<hr style='width: 100%;'>";
+	questionLinksHTML += "<div class='sectionHeader'> Section A </div>";	
+	questionLinksHTML += "<hr style='width: 100%;'>";
 	for(let i=1;i<=numberOfQuestionsA;i++)
 	{
 		questionLinksHTML += "<div id='qn" + i + "' class='questionLink' onclick='displayQuestion("+i+")'>";
@@ -66,6 +68,8 @@ function setVariables()
 		questionLinksHTML += "<div id='qn" + i + "S' class='questionStatus'>" + (questions[i]['solved'] ? '&#10003;' : questions[i]['attempts']) + "</div>";
 		questionLinksHTML += "</div>" + (i == numberOfQuestionsA ? "<hr style='width: 100%;'>" : "<hr>");
 	}
+	questionLinksHTML += "<div class='sectionHeader'> Section B </div>";
+	questionLinksHTML += "<hr style='width: 100%;'>";
 	for(let i=numberOfQuestionsA+1;i<=totalQuestions;i++)
 	{
 		questionLinksHTML += "<div id='qn" + i + "' class='questionLink' onclick='displayQuestion("+i+")'>";
@@ -103,19 +107,29 @@ function setVariables()
 function displayQuestion(n)
 {
 	currentQuestion = n;
-	$('#appHeaderID').text("Question " + currentQuestion);
+	// $('#appHeaderID').text("Question " + currentQuestion);
 	$('#questionDescriptionID').html(questions[currentQuestion]['questionStatement']);
+	if(currentQuestion > numberOfQuestionsA)
+	{
+		$('.submissionZone').hide();
+		$('.questionDescription').css({'height' : '100%'});
+	}
+	else
+	{
+		$('.submissionZone').show();
+		$('.questionDescription').css({'height' : '91%'});
+	}
 	$('#answerText').val('');
 }
 
 function openNav()
 { 
 	$('#myScore').text(participant['score']);
-	$('#mySidenav').css({'width' : '23%', 'transition' : '0.5s'});
+	$('#mySidenav').css({'width' : '23%', 'transition' : '0.3s'});
 }
 
 function closeNav()
-{ 	$('#mySidenav').css({'width' : '0', 'transition' : '0.3s'});}
+{ 	$('#mySidenav').css({'width' : '0', 'transition' : '0.0s'});}
 
 function submit()
 {
