@@ -118,7 +118,7 @@ function displayQuestion(n)
 	else
 	{
 		$('.submissionZone').show();
-		$('.questionDescription').css({'height' : '91%'});
+		$('.questionDescription').css({'height' : '90%'});
 	}
 	$('#answerText').val('');
 }
