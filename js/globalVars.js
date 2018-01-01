@@ -16,6 +16,7 @@ var participant =
 	'submissionHistory': [[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[]]
 };
 
+
 // var ngui = require('nw.gui');
 // var nwin = ngui.Window.get();
 // var DataStore = require('nedb');
@@ -59,16 +60,16 @@ QuestionB Link Format:
 function setVariables()
 {
 	var questionLinksHTML = "<hr style='width: 100%;'>";
-	questionLinksHTML += "<div class='sectionHeader'> Section A </div>";	
+	questionLinksHTML += "<div class='sectionHeader'> <div>Section A</div> </div>";	
 	questionLinksHTML += "<hr style='width: 100%;'>";
 	for(let i=1;i<=numberOfQuestionsA;i++)
 	{
 		questionLinksHTML += "<div id='qn" + i + "' class='questionLink' onclick='displayQuestion("+i+")'>";
 		questionLinksHTML += "<div id='qn" + i + "T' class='questionNumberA'>Question " + i + "</div>";
-		questionLinksHTML += "<div id='qn" + i + "S' class='questionStatus'>" + (questions[i]['solved'] ? '&#10003;' : questions[i]['attempts']) + "</div>";
+		questionLinksHTML += "<div id='qn" + i + "S' class='questionStatus'><div>" + (questions[i]['solved'] ? '&#10003;' : questions[i]['attempts']) + "</div></div>";
 		questionLinksHTML += "</div>" + (i == numberOfQuestionsA ? "<hr style='width: 100%;'>" : "<hr>");
 	}
-	questionLinksHTML += "<div class='sectionHeader'> Section B </div>";
+	questionLinksHTML += "<div class='sectionHeader'> <div>Section B</div> </div>";
 	questionLinksHTML += "<hr style='width: 100%;'>";
 	for(let i=numberOfQuestionsA+1;i<=totalQuestions;i++)
 	{
@@ -177,7 +178,7 @@ function submitX(callback)
 		$('#successModal').delay(300).fadeOut();
 		questions[currentQuestion]['attempts'] = -1;
 		$(id).css({'border' : '2px solid #37B76C', 'color' : '#37B76C'});
-		$(id).html('&#10003;');
+		$(id + " > div").html('&#10003;');
 		questions[currentQuestion]['solved'] = true;
 		participant['score'] += questions[currentQuestion]['score'];
 		$('#sDinner2').text(participant['score']);
@@ -189,7 +190,7 @@ function submitX(callback)
 		$('#wrongAnswerModal').delay(300).fadeOut();
 		questions[currentQuestion]['attempts']--;
 		$(id).css({'border' : '2px solid #FF3F2F', 'color' : '#FF3F2F'});
-		$(id).text(questions[currentQuestion]['attempts']);
+		$(id + " > div").text(questions[currentQuestion]['attempts']);
 		callback();
 	}
 
@@ -215,6 +216,7 @@ function launchApp()
 	// 		// console.log(docs[0]);
 	// 		participant = docs[0].participant;
 	// 		questions   = docs[0].questions;
+
 	// 		$('#sDinner2').text(participant['score']);
 	// 		setVariables();
 	// 	}
