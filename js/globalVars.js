@@ -196,13 +196,30 @@ function submitX(callback)
 
 }
 
+function validatePassword()
+{
+	ret = Sha256.hash($('#appPassCode').val()) === "d269fb1a7c202f6d42780042bdc185ae45cbc276134ac6810866072201d6ab2d";
+}
+
+var ret;
+
+function lockScreen()
+{
+	$("#appPassCode").keyup(function(event) 
+	{
+		if (event.keyCode === 13)
+			$("#appPassCode").click();
+	});
+	return ret;
+}
+
 function launchApp()
 {
 	// db.find({}, function(err, docs)
 	// {
 	// 	if(docs.length == 0)
 	// 	{
-			
+			while(!lockScreen());
 			participant['startTimeStamp'] = new Date().getTime();
 			participant['endTimeStamp']   = participant['startTimeStamp'] + duration * 60000;
 	// 		db.insert(

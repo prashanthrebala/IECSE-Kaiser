@@ -66,6 +66,19 @@ button {
 	cursor: pointer;
 }
 
+input {
+	width: 70%;
+	height: 40px;
+	margin-top: 90px;
+	text-align: center;
+	font-size: 14px;
+	border: none;
+	outline: none;
+	-webkit-border-radius: 50px;
+	-moz-border-radius: 50px;
+	border-radius: 50px;
+}
+
 #gg {
 
 	display: flex;
