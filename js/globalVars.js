@@ -198,19 +198,9 @@ function submitX(callback)
 
 function validatePassword()
 {
-	ret = Sha256.hash($('#appPassCode').val()) === "d269fb1a7c202f6d42780042bdc185ae45cbc276134ac6810866072201d6ab2d";
-}
-
-var ret;
-
-function lockScreen()
-{
-	$("#appPassCode").keyup(function(event) 
-	{
-		if (event.keyCode === 13)
-			$("#appPassCode").click();
-	});
-	return ret;
+	var pass = $("#appPassCode").val();
+	$("#appPassCode").val('');
+	return Sha256.hash(pass) === "04c2998f3d458c7724f8f3dde10dd431b4f2103e71db8b1e39aa2093f5c32e54";
 }
 
 function launchApp()
@@ -219,7 +209,6 @@ function launchApp()
 	// {
 	// 	if(docs.length == 0)
 	// 	{
-			while(!lockScreen());
 			participant['startTimeStamp'] = new Date().getTime();
 			participant['endTimeStamp']   = participant['startTimeStamp'] + duration * 60000;
 	// 		db.insert(
