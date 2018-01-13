@@ -46,3 +46,24 @@
 	src: url('../fonts/BebasNeue Bold.otf');
 
 }
+
+@font-face {
+
+	font-family: 'Avenir';
+	src: url('../fonts/Avenir.otf');
+
+}
+
+@font-face {
+
+	font-family: 'Avenir-Thin';
+	src: url('../fonts/Avenir-Thin.otf');
+
+}
+
+@font-face {
+
+	font-family: 'Avenir-Bold';
+	src: url('../fonts/Avenir-Bold.otf');
+
+}

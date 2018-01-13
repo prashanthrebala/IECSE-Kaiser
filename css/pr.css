@@ -7,23 +7,24 @@ html, body {
     padding: 0;
     height: 100%;
     width: 100%;
-	font-family: 'Calibri';
+	font-family: 'Avenir';
 
 }
 
-p {
+/*p {
 	font-size: 16px;
 	text-align: justify;
 	line-height: 20px;
-}
+	/*font-family: 'Avenir'*-/
+}*/
 
 b {
-	font-family: 'OpenSans-Light';
+	font-family: 'Avenir-Bold';
 }
 
-ul {
-	font-family: 'Roboto-Medium';
-	margin-top: -15px;
+h4 {
+	font-family: 'Avenir';
+	/*margin: 0px;*/
 }
 
 * { 
@@ -77,6 +78,10 @@ input {
 	-webkit-border-radius: 50px;
 	-moz-border-radius: 50px;
 	border-radius: 50px;
+}
+
+code {
+	font-size: 14px;
 }
 
 #gg {
@@ -273,6 +278,7 @@ input {
     transition: 0.5s;
     padding-top: 60px;
     opacity: 0.98;
+	font-family: 'Calibri';
 }
 
 .closebtn {
@@ -342,6 +348,7 @@ input {
 	background-color: #0F0D08;
 	float: left;
 	overflow-y: auto;
+	font-family: 'Calibri';
 
 }
 
@@ -448,10 +455,11 @@ input {
 
 .questionDescription {
 
-	padding: 10px 30px;
+	padding: 30px 30px;
 	height: 90%;
 	background-color: #eee;
 	overflow-y: auto;
+	font-family: 'Avenir';
 
 }
 

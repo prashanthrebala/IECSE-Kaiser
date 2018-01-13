@@ -229,11 +229,5 @@ function launchApp()
 	// });
 }
 
-
-$(document).ready(function() 
-{
-	try{ launchApp(); } 
-	catch(err){ console.log(err); }
-});
 // document.addEventListener('contextmenu', event => event.preventDefault());
 
