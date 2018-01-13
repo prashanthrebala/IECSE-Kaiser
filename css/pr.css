@@ -11,21 +11,10 @@ html, body {
 
 }
 
-/*p {
-	font-size: 16px;
-	text-align: justify;
-	line-height: 20px;
-	/*font-family: 'Avenir'*-/
-}*/
-
 b {
 	font-family: 'Avenir-Bold';
 }
 
-h4 {
-	font-family: 'Avenir';
-	/*margin: 0px;*/
-}
 
 * { 
     -moz-box-sizing: border-box; 
@@ -52,6 +41,7 @@ textarea {
 	border-radius: 1px;
 	background-color: #d8d8d8;
 	resize: none;
+	padding: 2px;
 	font-family: 'Calibri';
 	font-size: 15px;
 }

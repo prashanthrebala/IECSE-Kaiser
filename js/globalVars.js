@@ -1,32 +1,4 @@
 
-var currentQuestion = 0;
-var duration = 90;
-var numberOfQuestionsA = 15;
-var numberOfQuestionsB = 5;
-var totalQuestions = 20;
-var defaultTries = [100, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5,
-						 7, 7, 7, 7, 7, 7, 7, 9, 9, 9];
-
-var participant = 
-
-{
-	'startTimeStamp': 0,
-	'endTimeStamp' : 0,
-	'score': 0,
-	'submissionHistory': [[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[]]
-};
-
-
-// var ngui = require('nw.gui');
-// var nwin = ngui.Window.get();
-// var DataStore = require('nedb');
-// var path = require('path');
-// var db = new DataStore(
-// {
-// 	filename : path.join(ngui.App.dataPath, 'Kaiser.db'),
-// 	autoload : true
-// });
-
 function isSpaceChar(char){ return (char < 33 || char > 126);}
 
 function dropSpaceChars(string)
@@ -196,13 +168,6 @@ function submitX(callback)
 
 }
 
-function validatePassword()
-{
-	var pass = $("#appPassCode").val();
-	$("#appPassCode").val('');
-	return Sha256.hash(pass) === "04c2998f3d458c7724f8f3dde10dd431b4f2103e71db8b1e39aa2093f5c32e54";
-}
-
 function launchApp()
 {
 	// db.find({}, function(err, docs)
@@ -228,6 +193,12 @@ function launchApp()
 	// 	}
 	// });
 }
+
+$(document).ready(function() 
+{
+	try{ launchApp(); } 
+	catch(err){ console.log(err); }
+});
 
 // document.addEventListener('contextmenu', event => event.preventDefault());
 
