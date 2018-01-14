@@ -68,12 +68,12 @@ function setVariables()
 	.on('finish.countdown', function(event) 
 	{
 		$(this).text("00:00:00");
-			//uncomment while deploying
-			// $("#submitButton").css("pointer-events","none");
-			// alert('Your time\'s up!');
+			// uncomment while deploying
+		$("#submitButton").css("pointer-events","none");
+		alert('Your time\'s up!');
 	});
-	// nwin.show();
-	// nwin.maximize();
+	nwin.show();
+	nwin.maximize();
 
 }
 
@@ -108,17 +108,17 @@ function submit()
 {
 	submitX(function()
 	{
-		// db.remove({}, { multi: true }, function (err, numRemoved) 
-		// {
-		// 	db.insert(
-		// 	{
-		// 		participant: participant,
-		// 		questions: questions
-		// 	}, function(err, newDocs){
-		// 		console.log(err);
-		// 		console.log(newDocs);
-		// 	});
-		// });
+		db.remove({}, { multi: true }, function (err, numRemoved) 
+		{
+			db.insert(
+			{
+				participant: participant,
+				questions: questions
+			}, function(err, newDocs){
+				console.log(err);
+				console.log(newDocs);
+			});
+		});
 	});
 }
 
@@ -170,28 +170,28 @@ function submitX(callback)
 
 function launchApp()
 {
-	// db.find({}, function(err, docs)
-	// {
-	// 	if(docs.length == 0)
-	// 	{
+	db.find({}, function(err, docs)
+	{
+		if(docs.length == 0)
+		{
 			participant['startTimeStamp'] = new Date().getTime();
 			participant['endTimeStamp']   = participant['startTimeStamp'] + duration * 60000;
-	// 		db.insert(
-	// 		{
-	// 			participant: participant,
-	// 			questions: questions
-	// 		},function(err, newDocs){	setVariables();	});
-	// 	}
-	// 	else
-	// 	{
-	// 		// console.log(docs[0]);
-	// 		participant = docs[0].participant;
-	// 		questions   = docs[0].questions;
+			db.insert(
+			{
+				participant: participant,
+				questions: questions
+			},function(err, newDocs){	setVariables();	});
+		}
+		else
+		{
+			// console.log(docs[0]);
+			participant = docs[0].participant;
+			questions   = docs[0].questions;
 
-	// 		$('#sDinner2').text(participant['score']);
-	// 		setVariables();
-	// 	}
-	// });
+			$('#sDinner2').text(participant['score']);
+			setVariables();
+		}
+	});
 }
 
 $(document).ready(function() 

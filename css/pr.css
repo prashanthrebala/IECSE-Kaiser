@@ -11,11 +11,6 @@ html, body {
 
 }
 
-b {
-	font-family: 'Avenir-Bold';
-}
-
-
 * { 
     -moz-box-sizing: border-box; 
     -webkit-box-sizing: border-box; 
