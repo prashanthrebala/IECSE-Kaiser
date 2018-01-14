@@ -176,7 +176,7 @@ var questions =
 		},
 
 		/* 14 */
-		// shounak
+		//-- shounak
 		14 : {
 
 			'questionStatement': "<p>You are given the equation: <code>z = [x/2] + y + xy</code><br>where, [x] denotes the floor value of x.<br>The above equation is unsolvable for some values of z. If we arrange these values in ascending order, we get a sequence. Find the <code>n<sup>th</sup></code> value in this sequence. Since the value can be large, find the value modulo 1000000007. <br><br>Required data:<br><code>2, 3, 5, 7, 13, 17, 19, 31, 61, 89, 107, 127, 521, 607, 1279, 2203, 2281, 3217, 4253, 4423, 9689, 9941, 11213, 19937, 21701, 23209, 44497, 86243, 110503, 132049, 216091, 756839, 859433, 1257787, 1398269, 2976221, 3021377, 6972593, 13466917, 20996011, 24036583, 25964951, 30402457, 32582657, 37156667 </code><h4>Sample Input</h4><code>28</code><br><h4>Sample Output</h4><code>485739298<br></code><h4>Test case</h4><code>40</code></p>",
@@ -184,12 +184,12 @@ var questions =
 			'solved' : false,
 			'attempted' : false,
 			'score' : 50,
-			'answer' : "1b16b1df538ba12dc3f97edbb85caa7050d46c148134290feba80f8236c83db9",
+			'answer' : "a0c17a2d79b008bc3a1c2e08dc49a31b48b6a70fefe6e51ab9f520651b5dc2d2",
 
 		},
 
 		/* 15 */
-		// shounak 
+		//-- shounak 
 		15 : {
 
 			'questionStatement': "<p>Sidhant is bored in his hostel and he decides to play football in the corridor. The corridor is shaped as a rectangular parallelpiped. Formally the corridor has a door, a ceiling, a floor and two walls. Consider a 3-D space. The door of the corridor will be a rectangle on the xOz plane, such that the lower left corner of the door is located at point (0,0,0) and the upper right corner is located at the point (a,0,b). The corridor is infinite in the dirction of increasing y. The floor in the corridor will be the plane xOy. The ceiling of the corridor will be a plane parallel to the plane xOy and it passes through the point (a,0,b). One of the walls is the plane yOz and the other is a plane parallel to the plane yOz passing through the poing (a,0,b). The ball hits the door when the y coordinate of the ball becomes 0. <br>Now, Sidhant takes the ball to a distance of m away from the door, i.e, he places the ball at the point (a/2,m,0). Now he hits the ball with a velocity vector of (vx,vy,vz). The ball bounced of the walls, ceiling, floor and finally hit the door at a spot (x,0,z). Find the values of x,z. Assume that Sidhant's world follows laws of an ideal physical model, i.e, ideal laws of reflection, zero friction, zero gravity, no loss of energy and no air resistance.Print exactly 9 digits after the decimal point.<br><center><img src='../img/q15.jpg'></center> <br><br><br><h4>Sample Input</h4><code>7 2 11<br>3 -11 2<br></code><h4>Sample Output</h4><code>6.5000000000 2.0000000000<br></code><h4>Test case</h4><code>41 4 58<br>81 -9 65</code></p>",
@@ -197,7 +197,7 @@ var questions =
 			'solved' : false,
 			'attempted' : false,
 			'score' : 50,
-			'answer' : "65c74c15a686187bb6bbf9958f494fc6b80068034a659a9ad44991b08c58f2d2",
+			'answer' : "eabdf290d67fcec51cfb426abbee0ce225fd1027c7e2e61edb669f467530b863",
 
 		},
 
