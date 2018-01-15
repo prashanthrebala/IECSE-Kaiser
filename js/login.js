@@ -18,7 +18,7 @@ $(document).ready(function()
 	{
 		if(docs.length != 0)
 		{
-			$('#appPassCode').val('kaiser');
+			$('#appPassCode').val('kaiser1601');
 			$('#enterApp').trigger('click');
 		}
 	});

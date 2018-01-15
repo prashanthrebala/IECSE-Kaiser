@@ -1,9 +1,10 @@
 var currentQuestion = 0;
 var duration = 90;
-var numberOfQuestionsA = 15;
+var numberOfQuestionsA = 17;
 var numberOfQuestionsB = 5;
-var totalQuestions = 20;
-var defaultTries = [100, 1, 1, 3, 5, 5, 5, 5, 5, 5, 5, 7, 7, 7, 7, 7];
+var totalQuestions = 22;
+var defaultTries = [100, 1, 1, 2, 2, 3, 3, 3, 3, 
+						5, 5, 5, 5, 5, 5, 7, 9, 9];
 
 var participant = 
 
