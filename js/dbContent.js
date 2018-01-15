@@ -1,5 +1,5 @@
 var currentQuestion = 0;
-var duration = 90;
+var duration = 91;
 var numberOfQuestionsA = 17;
 var numberOfQuestionsB = 5;
 var totalQuestions = 22;

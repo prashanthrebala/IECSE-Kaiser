@@ -1,0 +1,24 @@
+{
+  "name": "iecse-kaiser",
+  "version": "1.0.0",
+  "description": "Kaiser app",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/prashanthrebala/IECSE-Kaiser.git"
+  },
+  "keywords": [
+    "NWJs",
+    "IECSE",
+    "Kaiser"
+  ],
+  "main": "Login.html",
+  "author": "prashanthrebala",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/prashanthrebala/IECSE-Kaiser/issues"
+  },
+  "homepage": "https://github.com/prashanthrebala/IECSE-Kaiser#readme",
+  "dependencies": {
+    "nedb": "^1.8.0"
+  }
+}

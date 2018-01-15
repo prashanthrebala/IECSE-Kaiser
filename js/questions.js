@@ -17,7 +17,6 @@ var questions =
 		},
 
 		2 : {
-
 			'questionStatement': "Shounak Dey is a legend. He has secured an All India Rank of 25 in JEE Mains 2010 Examination. His batchmates are looking for a treat. They always come in a group to him for demanding treat. But Shounak has a lot of expenses to cover and will be able to give treat to only few of them. To decide the group of people eligible for the treat, he uses the following criteria: People in group must belong to same hostel and everyone in group must be lower or equally (rank >=15) ranked to him.<br>Can you find out whether a group gets the treat? <br>Note: Here hostel_id identifies each hostel uniquely.<br><h4>Input format</h4>First line contains <b>N</b>, the number of people in a group. Second line contains <b>N</b> space separated integers hostel_id[1], hostel_id[2] ....hostel_id[n], where hostel_id[i] denotes the hostel id of ith person in group. Third line contains <b>N</b> space separated integers rank[1], rank[2] ..rank[n], where rank[i] denotes the rank of ith person in the group.<br><h4>Output format</h4>Print 'Party'(without quotes) if the group gets the treat else print 'No Party' (without quotes) on a separate line.<br><h4>Sample Input</h4><code>5 <br>1 1 1 1 6 <br>12 10 5 20 25 <br></code><h4>Sample Output</h4><code>No Party</code><h4>Test Case</h4><code>10 <br>2 2 2 2 2 2 2 2 2 2 <br>101 233 4775 76 33 24 7790 990 2002 26</code>",
 			'attempts' : 1,
 			'solved' : false,

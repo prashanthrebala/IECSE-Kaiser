@@ -170,28 +170,27 @@ function submitX(callback)
 
 function launchApp()
 {
-	// db.find({}, function(err, docs)
-	// {
-	// 	if(docs.length == 0)
-	// 	{
+	db.find({}, function(err, docs)
+	{
+		if(docs.length == 0)
+		{
 			participant['startTimeStamp'] = new Date().getTime();
 			participant['endTimeStamp']   = participant['startTimeStamp'] + duration * 60000;
-	// 		db.insert(
-	// 		{
-	// 			participant: participant,
-	// 			questions: questions
-	// 		},function(err, newDocs){	setVariables();	});
-	// 	}
-	// 	else
-	// 	{
-	// 		// console.log(docs[0]);
-	// 		participant = docs[0].participant;
-	// 		questions   = docs[0].questions;
+			db.insert(
+			{
+				participant: participant,
+				questions: questions
+			},function(err, newDocs){	setVariables();	});
+		}
+		else
+		{
+			participant = docs[0].participant;
+			questions   = docs[0].questions;
 
-	// 		$('#sDinner2').text(participant['score']);
-	// 		setVariables();
-	// 	}
-	// });
+			$('#sDinner2').text(participant['score']);
+			setVariables();
+		}
+	});
 }
 
 $(document).ready(function() 
@@ -200,5 +199,5 @@ $(document).ready(function()
 	catch(err){ console.log(err); }
 });
 
-// document.addEventListener('contextmenu', event => event.preventDefault());
+document.addEventListener('contextmenu', event => event.preventDefault());
 
